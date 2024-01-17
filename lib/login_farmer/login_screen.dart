@@ -23,21 +23,25 @@ class _LoginState extends State<Login> {
       body: ListView(
         children: [
           Padding(
-            padding: const EdgeInsets.only(top: 80.0, right: 18, left: 18,bottom: 80),
+            padding: const EdgeInsets.only(top: 80.0,bottom: 40),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
-                  TKeys.back.translate(context),
-                  style: GoogleFonts.tajawal(
-                    color: Theme.of(context).colorScheme.scrim,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 22,
+                Container(
+                  margin:const EdgeInsets.only(right: 9),
+                  child: Text(
+                    TKeys.back.translate(context),
+                    softWrap: true,
+                    style: GoogleFonts.tajawal(
+                      color: Theme.of(context).colorScheme.scrim,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                    ),
                   ),
                 ),
                 Image.asset(
                   'assets/images/group.png',
-                  width: 150,
+                  width: 120,
                   height: 170,
                 ),
               ],
@@ -56,12 +60,15 @@ class _LoginState extends State<Login> {
               return null;
             },
             maxLines: 1,
+            colorBord: mainColor,
             icon: Icon(
               Icons.email_outlined,
               color: mainColor,
             ),
+            iconOption: const Text(''),
           ),
           CustomTextForm(
+            iconOption: const Text(''),
             fieldName: TKeys.password.translate(context),
             hintText: TKeys.passwordHint.translate(context),
             myController: password,
@@ -72,6 +79,7 @@ class _LoginState extends State<Login> {
               return null;
             },
             maxLines: 1,
+            colorBord: mainColor,
             icon: Icon(
               Icons.visibility_outlined,
               color: mainColor,
@@ -85,6 +93,12 @@ class _LoginState extends State<Login> {
               Navigator.pushReplacementNamed(context, '/navBar');
             },
             title: TKeys.next.translate(context),
+            height: 45,
+            width: MediaQuery.of(context).size.width,
+            padding: 18.0,
+            icon: null,
+            fontSize: 23,
+            fontWeight: FontWeight.w900,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,

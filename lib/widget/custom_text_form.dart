@@ -9,7 +9,10 @@ class CustomTextForm extends StatelessWidget {
   final TextEditingController myController;
   final String? Function(String?)? valid;
   final Widget? icon;
+  final Widget? iconPrefix;
+  final Color? colorBord;
   final String fieldName;
+  final Widget? iconOption;
 
   const CustomTextForm({
     super.key,
@@ -19,6 +22,9 @@ class CustomTextForm extends StatelessWidget {
     required this.valid,
     required this.maxLines,
     required this.icon,
+    this.colorBord,
+    this.iconPrefix,
+    this.iconOption,
   });
 
   @override
@@ -30,13 +36,18 @@ class CustomTextForm extends StatelessWidget {
         children: [
           Padding(
             padding: const EdgeInsets.only(bottom: 8.0),
-            child: Text(
-              fieldName,
-              style: GoogleFonts.tajawal(
-                fontSize: 22,
-                color: Colors.black87,
-                fontWeight: FontWeight.bold
-              ),
+            child: Row(
+               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  fieldName,
+                  style: GoogleFonts.tajawal(
+                      fontSize: 22,
+                      color: Colors.black87,
+                      fontWeight: FontWeight.bold),
+                ),
+                iconOption!,
+              ],
             ),
           ),
           TextFormField(
@@ -47,6 +58,8 @@ class CustomTextForm extends StatelessWidget {
             decoration: InputDecoration(
               helperText: '',
               suffixIcon: icon,
+              prefixIcon: iconPrefix,
+              suffixIconColor: mainColor,
               hintText: hintText,
               hintStyle: GoogleFonts.tajawal(
                 fontSize: 18,
@@ -62,9 +75,7 @@ class CustomTextForm extends StatelessWidget {
               ),
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(11),
-                borderSide: const BorderSide(
-                  color: Colors.green,
-                ),
+                borderSide: BorderSide(color: colorBord!),
               ),
             ),
           ),

@@ -3,6 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:hased/company/login_company/signin_company.dart';
 import 'package:hased/const/color.dart';
 import 'package:hased/pages/select.dart';
+import 'package:hased/screen/home_component/screen/selling_crop_screen.dart';
+import 'package:hased/screen/play_store.dart';
 import 'package:hased/splash/splash_screen.dart';
 import 'package:hased/utils/color_schemes.g.dart';
 import 'package:hased/widget/curved_nav_bar.dart';
@@ -82,6 +84,7 @@ class MyApp extends StatelessWidget {
               home: const SplashScreen(),
               routes: {
                 '/home': (ctx)=> const HomeFarmer(),
+                '/playStore': (ctx)=> const PlayStore(),
                 '/signIn': (ctx)=> const SignIn(),
                 '/login': (ctx)=> const Login(),
                 '/register': (ctx)=> const Register(),

@@ -164,7 +164,7 @@ class _PageViewState extends State<PageViewScreen> {
                 ),
               ),
               const SizedBox(
-                height: 30,
+                height: 20,
               ),
             ],
           )

@@ -45,5 +45,25 @@
   "selectCrop":"Click here and select your crop type and quantity\nWe will bring the buyer to you!",
   "clickHere":"Click Here",
   "selectType":"Click here and specify the type of your crop and the area of the agricultural plot, and we will bring you the buyer\nUntil you have it!",
-  "prepare":"Do you want to prepare to sell your produce?"
+  "prepare":"Do you want to prepare to sell your produce?",
+  "full":"You are required to fill out all the information in order to provide you with the right buyer",
+  "photo":"Add pictures of agricultural land",
+  "openCam":"Open Camera",
+  "openPho":"Open Photo",
+  "selectYourCrop":"Select Your Crop",
+  "location":"Geographical Location",
+  "quantity":"Harvest quantity",
+  "contactNumber":"Contact Number",
+  "anotherContactNumber":"Another contact number",
+  "addDescription":"Add A Description Of Your Crop",
+  "sunflower":"Sunflowers",
+  "minya":"El Minya",
+  "write":"Write Here...",
+  "update":"Update",
+  "send":"Submit a request!",
+  "congratulation":"Congratulation!",
+  "request":"Your request has been sent successfully and the Hassad support team will contact you within hours and you will be informed of the details of the entire transaction",
+  "afterSend":"After sending the request, the request will be reviewed by the support team and you will be responded to within 12 hours with the best buyer ready to buy your crop.",
+  "visitStore":"Visit the agricultural store!"
+
 }

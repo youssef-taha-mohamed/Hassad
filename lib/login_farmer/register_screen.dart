@@ -23,34 +23,37 @@ class _RegisterState extends State<Register> {
       body: ListView(
         children: [
           Padding(
-            padding: const EdgeInsets.only(top: 80.0, right: 18, left: 18,bottom: 80),
+            padding: const EdgeInsets.only(top: 80.0,bottom: 40),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Column(
-                  children: [
-                    Text(
-                      TKeys.welcome.translate(context),
-                      textAlign: TextAlign.start,
-                      style: GoogleFonts.tajawal(
-                        color: Theme.of(context).colorScheme.scrim,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 28,
+                Container(
+                  margin: const EdgeInsets.only(right: 12,),
+                  child: Column(
+                    children: [
+                      Text(
+                        TKeys.welcome.translate(context),
+                        textAlign: TextAlign.start,
+                        style: GoogleFonts.tajawal(
+                          color: Theme.of(context).colorScheme.scrim,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 26,
+                        ),
                       ),
-                    ),
-                    Text(
-                      TKeys.registerNow.translate(context),
-                      textAlign: TextAlign.start,
-                      style: GoogleFonts.tajawal(
-                        color: Theme.of(context).colorScheme.scrim,
-                        fontSize: 19,
+                      Text(
+                        TKeys.registerNow.translate(context),
+                        textAlign: TextAlign.start,
+                        style: GoogleFonts.tajawal(
+                          color: Theme.of(context).colorScheme.scrim,
+                          fontSize: 19,
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
                 Image.asset(
                   'assets/images/group.png',
-                  width: 150,
+                  width: 120,
                   height: 170,
                 ),
               ],
@@ -58,6 +61,7 @@ class _RegisterState extends State<Register> {
           ),
           Spacer(),
           CustomTextForm(
+            iconOption: const Text(''),
             fieldName: TKeys.email.translate(context),
             hintText: TKeys.emailHint.translate(context),
             myController: email,
@@ -68,12 +72,14 @@ class _RegisterState extends State<Register> {
               return null;
             },
             maxLines: 1,
+            colorBord: mainColor,
             icon: Icon(
               Icons.email_outlined,
               color: mainColor,
             ),
           ),
           CustomTextForm(
+            iconOption: const Text(''),
             fieldName: TKeys.password.translate(context),
             hintText: TKeys.passwordHint.translate(context),
             myController: password,
@@ -84,12 +90,14 @@ class _RegisterState extends State<Register> {
               return null;
             },
             maxLines: 1,
+            colorBord: mainColor,
             icon: Icon(
               Icons.visibility_outlined,
               color: mainColor,
             ),
           ),
           CustomTextForm(
+            iconOption: const Text(''),
             fieldName: TKeys.configPass.translate(context),
             hintText: TKeys.configPassHint.translate(context),
             myController: configPassword,
@@ -100,6 +108,7 @@ class _RegisterState extends State<Register> {
               return null;
             },
             maxLines: 1,
+            colorBord: mainColor,
             icon: Icon(
               Icons.visibility_outlined,
               color: mainColor,
@@ -113,6 +122,12 @@ class _RegisterState extends State<Register> {
               Navigator.pushReplacementNamed(context, '/signIn');
             },
             title: TKeys.next.translate(context),
+            width: MediaQuery.of(context).size.width,
+            height: 45,
+            padding: 18.0,
+            icon: null,
+            fontSize: 23,
+            fontWeight: FontWeight.w900,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,

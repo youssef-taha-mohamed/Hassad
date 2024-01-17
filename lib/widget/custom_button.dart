@@ -5,27 +5,45 @@ import 'package:hased/const/color.dart';
 class CustomButton extends StatelessWidget {
   final void Function() function;
   final String title;
+  final double width;
+  final double height;
+  final double padding;
+  final IconData? icon;
+  final double fontSize;
+  final FontWeight? fontWeight;
 
-  const CustomButton({super.key, required this.function, required this.title});
+  const CustomButton({
+    super.key,
+    required this.function,
+    required this.title,
+    required this.width,
+    required this.height,
+    required this.padding,
+    required this.icon, required this.fontSize, this.fontWeight,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 18),
-      child: ElevatedButton(
+      padding: EdgeInsets.symmetric(horizontal: padding),
+      child: ElevatedButton.icon(
         style: ElevatedButton.styleFrom(
             backgroundColor: mainColor,
-            minimumSize: Size(MediaQuery.of(context).size.width, 45),
+            minimumSize: Size(width, height),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(8),
             )),
         onPressed: function,
-        child: Text(
+        icon: Icon(
+          icon,
+          color: Colors.white,
+        ),
+        label: Text(
           title,
           textAlign: TextAlign.center,
           style: GoogleFonts.tajawal(
-            fontWeight: FontWeight.w900,
-            fontSize: 23,
+            fontWeight: fontWeight,
+            fontSize: fontSize,
             letterSpacing: 1,
             color: Colors.white,
           ),

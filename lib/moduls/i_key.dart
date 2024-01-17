@@ -48,7 +48,26 @@ enum TKeys{
   crop,
   clickHere,
   selectType,
-  prepare
+  prepare,
+  full,
+  photo,
+  openCam,
+  openPho,
+  selectYourCrop,
+  location,
+  quantity,
+  contactNumber,
+  anotherContactNumber,
+  addDescription,
+  sunflower,
+  minya,
+  write,
+  update,
+  send,
+  afterSend,
+  congratulation,
+  request,
+  visitStore
 }
 
 extension TKeysExtention on TKeys{

@@ -57,12 +57,15 @@ class _SignInState extends State<SignIn> {
                   return null;
                 },
                 maxLines: 1,
+                colorBord: mainColor,
+                iconOption: const Text(''),
                 icon: Icon(
                   Icons.person_outline_sharp,
                   color: mainColor,
                 ),
               ),
               CustomTextForm(
+                iconOption: const Text(''),
                 fieldName: TKeys.phoneNumber.translate(context),
                 hintText: TKeys.phoneNumberHint.translate(context),
                 myController: phoneNumber,
@@ -73,6 +76,7 @@ class _SignInState extends State<SignIn> {
                   return null;
                 },
                 maxLines: 1,
+                colorBord: mainColor,
                 icon: Icon(
                   Icons.phone_rounded,
                   color: mainColor,
@@ -86,6 +90,12 @@ class _SignInState extends State<SignIn> {
                   Navigator.of(context).pushNamedAndRemoveUntil('/navBar', (route) => false);
                 },
                 title: TKeys.login.translate(context),
+                width: MediaQuery.of(context).size.width,
+                height: 45,
+                padding: 18.0,
+                icon: null,
+                fontSize: 23,
+                fontWeight: FontWeight.w900,
               ),
             ],
           ),

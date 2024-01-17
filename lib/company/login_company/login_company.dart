@@ -28,34 +28,37 @@ class _LoginCompanyState extends State<LoginCompany> {
           //mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Padding(
-              padding: const EdgeInsets.only(top: 80.0, right: 18, left: 18),
+              padding: const EdgeInsets.only(top: 80.0,bottom: 40),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Column(
-                    children: [
-                      Text(
-                        TKeys.welcome.translate(context),
-                        textAlign: TextAlign.start,
-                        style: GoogleFonts.tajawal(
-                          color: Theme.of(context).colorScheme.scrim,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 28,
+                  Container(
+                    margin:const EdgeInsets.only(right: 13,left: 12),
+                    child: Column(
+                      children: [
+                        Text(
+                          TKeys.welcome.translate(context),
+                          textAlign: TextAlign.start,
+                          style: GoogleFonts.tajawal(
+                            color: Theme.of(context).colorScheme.scrim,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 23,
+                          ),
                         ),
-                      ),
-                      Text(
-                        TKeys.registerNow.translate(context),
-                        textAlign: TextAlign.start,
-                        style: GoogleFonts.tajawal(
-                          color: Theme.of(context).colorScheme.scrim,
-                          fontSize: 19,
+                        Text(
+                          TKeys.registerNow.translate(context),
+                          textAlign: TextAlign.start,
+                          style: GoogleFonts.tajawal(
+                            color: Theme.of(context).colorScheme.scrim,
+                            fontSize: 17,
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                   Image.asset(
                     'assets/images/group.png',
-                    width: 150,
+                    width: 120,
                     height: 170,
                   ),
                 ],
@@ -73,6 +76,8 @@ class _LoginCompanyState extends State<LoginCompany> {
                 }
                 return null;
               },
+              colorBord: mainColor,
+              iconOption: const Text(''),
               maxLines: 1,
               icon: Icon(
                 Icons.email_outlined,
@@ -80,6 +85,7 @@ class _LoginCompanyState extends State<LoginCompany> {
               ),
             ),
             CustomTextForm(
+              iconOption: const Text(''),
               fieldName: TKeys.password.translate(context),
               hintText: TKeys.passwordHint.translate(context),
               myController: password,
@@ -89,6 +95,7 @@ class _LoginCompanyState extends State<LoginCompany> {
                 }
                 return null;
               },
+              colorBord: mainColor,
               maxLines: 1,
               icon: Icon(
                 Icons.visibility_outlined,
@@ -96,6 +103,7 @@ class _LoginCompanyState extends State<LoginCompany> {
               ),
             ),
             CustomTextForm(
+              iconOption: const Text(''),
               fieldName: TKeys.configPass.translate(context),
               hintText: TKeys.configPassHint.translate(context),
               myController: configPassword,
@@ -106,6 +114,7 @@ class _LoginCompanyState extends State<LoginCompany> {
                 return null;
               },
               maxLines: 1,
+              colorBord: mainColor,
               icon: Icon(
                 Icons.visibility_outlined,
                 color: mainColor,
@@ -119,6 +128,11 @@ class _LoginCompanyState extends State<LoginCompany> {
                 Navigator.pushReplacementNamed(context, '/signInComp');
               },
               title: TKeys.next.translate(context),
+              width: MediaQuery.of(context).size.width,
+              height: 45,
+              padding: 18.0,
+              icon: null,
+              fontSize: 23,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,

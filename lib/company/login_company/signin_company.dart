@@ -21,26 +21,30 @@ class _SignInCompanyState extends State<SignInCompany> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      body: ListView(
+        // crossAxisAlignment: CrossAxisAlignment.center,
+        // mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Padding(
-            padding: const EdgeInsets.only(top: 80.0, right: 18, left: 18),
+            padding: const EdgeInsets.only(top: 80.0,bottom: 80),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
-                  TKeys.back.translate(context),
-                  style: GoogleFonts.tajawal(
-                    color: Theme.of(context).colorScheme.scrim,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 22,
+                Container(
+                  margin:const EdgeInsets.only(right: 13,left: 12),
+                  child: Text(
+                    TKeys.back.translate(context),
+                    softWrap: true,
+                    style: GoogleFonts.tajawal(
+                      color: Theme.of(context).colorScheme.scrim,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                    ),
                   ),
                 ),
                 Image.asset(
                   'assets/images/group.png',
-                  width: 150,
+                  width: 120,
                   height: 170,
                 ),
               ],
@@ -48,6 +52,7 @@ class _SignInCompanyState extends State<SignInCompany> {
           ),
           Spacer(),
           CustomTextForm(
+            iconOption: const Text(''),
             fieldName: TKeys.email.translate(context),
             hintText: TKeys.emailHint.translate(context),
             myController: email,
@@ -58,12 +63,14 @@ class _SignInCompanyState extends State<SignInCompany> {
               return null;
             },
             maxLines: 1,
+            colorBord: mainColor,
             icon: Icon(
               Icons.email_outlined,
               color: mainColor,
             ),
           ),
           CustomTextForm(
+            iconOption: const Text(''),
             fieldName: TKeys.password.translate(context),
             hintText: TKeys.passwordHint.translate(context),
             myController: password,
@@ -74,6 +81,7 @@ class _SignInCompanyState extends State<SignInCompany> {
               return null;
             },
             maxLines: 1,
+            colorBord: mainColor,
             icon: Icon(
               Icons.visibility_outlined,
               color: mainColor,
@@ -87,6 +95,12 @@ class _SignInCompanyState extends State<SignInCompany> {
               Navigator.pushReplacementNamed(context, '/registerCompany');
             },
             title: TKeys.next.translate(context),
+            width: MediaQuery.of(context).size.width,
+            height: 45,
+            padding: 18.0,
+            icon: null,
+            fontSize: 23,
+            fontWeight: FontWeight.w900,
           ),
           // Row(
           //   mainAxisAlignment: MainAxisAlignment.center,

@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:hased/company/screen/home_company.dart';
 
-import '../../const/color.dart';
+import '../../../const/color.dart';
 
 class AppBarHome extends StatelessWidget {
-  const AppBarHome({super.key});
+  final IconData? iconData;
+  const AppBarHome({super.key, required this.iconData});
 
   @override
   Widget build(BuildContext context) {
@@ -12,8 +13,7 @@ class AppBarHome extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Container(
-          margin: const EdgeInsets.symmetric(
-              vertical: 30, horizontal: 20),
+          margin: const EdgeInsets.only(right: 5,bottom: 40),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(40),
             color: mainColor,
@@ -25,7 +25,7 @@ class AppBarHome extends StatelessWidget {
               Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=> HomeCompany()));
             },
             child: Icon(
-              Icons.list_outlined,
+              iconData,
               size: 40,
               color: Colors.white.withOpacity(0.8),
             ),
@@ -35,7 +35,7 @@ class AppBarHome extends StatelessWidget {
           alignment: Alignment.topRight,
           children: [
             Container(
-              margin: const EdgeInsets.only(left: 20),
+              margin: const EdgeInsets.only(left: 15,bottom: 40),
               width: 45,
               height: 45,
               decoration: BoxDecoration(

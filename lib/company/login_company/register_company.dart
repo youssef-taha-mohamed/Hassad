@@ -34,7 +34,9 @@ class _RegisterCompanyState extends State<RegisterCompany> {
                 ),
                 child: Image.asset('assets/images/verified.jpg'),
               ),
-              const SizedBox(height: 40,),
+              const SizedBox(
+                height: 40,
+              ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16.0),
                 child: Text(
@@ -48,21 +50,25 @@ class _RegisterCompanyState extends State<RegisterCompany> {
                   ),
                 ),
               ),
-              const SizedBox(height: 30,),
-              CustomTextForm(
-                fieldName: TKeys.field1.translate(context),
-                hintText: TKeys.helper.translate(context),
-                myController: name,
-                valid: (value) {
-                  if (value!.isEmpty) {
-                    return 'Enter Your Number';
-                  }
-                  return null;
-                },
-                maxLines: 1,
-                icon: null
+              const SizedBox(
+                height: 30,
               ),
               CustomTextForm(
+                  iconOption: const Text(''),
+                  fieldName: TKeys.field1.translate(context),
+                  hintText: TKeys.helper.translate(context),
+                  myController: name,
+                  valid: (value) {
+                    if (value!.isEmpty) {
+                      return 'Enter Your Number';
+                    }
+                    return null;
+                  },
+                  maxLines: 1,
+                  colorBord: mainColor,
+                  icon: null),
+              CustomTextForm(
+                iconOption: const Text(''),
                 fieldName: TKeys.field2.translate(context),
                 hintText: TKeys.helper.translate(context),
                 myController: phoneNumber,
@@ -72,10 +78,12 @@ class _RegisterCompanyState extends State<RegisterCompany> {
                   }
                   return null;
                 },
+                colorBord: mainColor,
                 maxLines: 1,
                 icon: null,
               ),
               CustomTextForm(
+                iconOption: const Text(''),
                 fieldName: TKeys.phoneNumber.translate(context),
                 hintText: TKeys.phoneNumberHint.translate(context),
                 myController: phoneNumber,
@@ -86,19 +94,23 @@ class _RegisterCompanyState extends State<RegisterCompany> {
                   return null;
                 },
                 maxLines: 1,
-                icon: Icon(
-                  Icons.phone_rounded,
-                  color:mainColor
-                ),
+                colorBord: mainColor,
+                icon: Icon(Icons.phone_rounded, color: mainColor),
               ),
               const SizedBox(
                 height: 20,
               ),
               CustomButton(
                 function: () {
-                  Navigator.of(context).pushNamedAndRemoveUntil('/verified', (route) => false);
+                  Navigator.of(context)
+                      .pushNamedAndRemoveUntil('/verified', (route) => false);
                 },
                 title: TKeys.login.translate(context),
+                width: MediaQuery.of(context).size.width,
+                height: 45,
+                padding: 18.0,
+                icon: null,
+                fontSize: 23,
               ),
             ],
           ),

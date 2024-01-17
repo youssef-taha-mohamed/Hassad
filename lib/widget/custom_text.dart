@@ -1,44 +1,41 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class CustomTextWithColumn extends StatelessWidget {
-  final String textOne;
-  final String textTwo;
+class CustomText extends StatelessWidget {
+  final String title;
+  final TextAlign? textAlign;
   final double fontSize;
-  final CrossAxisAlignment axis;
+  final EdgeInsets? margin;
+  final double? wordSpace;
+  final double? letterSpace;
+  Color? color = Colors.black;
 
-  const CustomTextWithColumn(
-      {super.key,
-      required this.textOne,
-      required this.textTwo,
-      required this.fontSize, required this.axis,});
+  CustomText({
+    super.key,
+    required this.title,
+    this.textAlign,
+    required this.fontSize,
+    this.wordSpace,
+    this.letterSpace,
+    this.color,
+    this.margin,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin:const EdgeInsets.symmetric(horizontal: 20),
-      child: Column(
-        crossAxisAlignment: axis,
-        children: [
-          Text(
-            textOne,
-            //textAlign: TextAlign.center,
-            style: GoogleFonts.tajawal(
-              color: Theme.of(context).colorScheme.scrim,
-              fontWeight: FontWeight.bold,
-              fontSize: 28,
-            ),
-          ),
-          const SizedBox(height: 5,),
-          Text(
-            textTwo,
-            //textAlign: TextAlign.center,
-            style: GoogleFonts.tajawal(
-              color: Theme.of(context).colorScheme.scrim,
-              fontSize: fontSize,
-            ),
-          ),
-        ],
+      margin: margin,
+      child: Text(
+        title,
+        textAlign: textAlign,
+        softWrap: true,
+        style: GoogleFonts.tajawal(
+          fontWeight: FontWeight.w500,
+          fontSize: fontSize,
+          wordSpacing: wordSpace,
+          letterSpacing: letterSpace,
+          color: color,
+        ),
       ),
     );
   }
