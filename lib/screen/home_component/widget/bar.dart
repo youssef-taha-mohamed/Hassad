@@ -13,7 +13,7 @@ class AppBarHome extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Container(
-          margin: const EdgeInsets.only(right: 5,bottom: 40),
+          margin: const EdgeInsets.only(right: 5,bottom: 30),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(40),
             color: mainColor,
@@ -35,7 +35,7 @@ class AppBarHome extends StatelessWidget {
           alignment: Alignment.topRight,
           children: [
             Container(
-              margin: const EdgeInsets.only(left: 15,bottom: 40),
+              margin: const EdgeInsets.only(left: 15,bottom: 30),
               width: 45,
               height: 45,
               decoration: BoxDecoration(

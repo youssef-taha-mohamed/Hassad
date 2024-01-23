@@ -4,7 +4,10 @@ import 'package:hased/moduls/i_key.dart';
 import 'package:hased/widget/custom_text_form.dart';
 
 class Data extends StatefulWidget {
-  const Data({super.key});
+  final String title;
+  final String hintTitle;
+  final String description;
+  const Data({super.key, required this.title, required this.hintTitle, required this.description});
 
   @override
   State<Data> createState() => _DataState();
@@ -72,8 +75,8 @@ class _DataState extends State<Data> {
           ),
           CustomTextForm(
             iconOption: const Text(''),
-            fieldName: TKeys.quantity.translate(context),
-            hintText: '10 طن',
+            fieldName: widget.title,
+            hintText: widget.hintTitle,
             myController: type,
             valid: (value) {
               if (value!.isEmpty) {
@@ -128,8 +131,8 @@ class _DataState extends State<Data> {
             colorBord: Colors.white,
           ),
           CustomTextForm(
-            iconOption: Text(''),
-            fieldName: TKeys.addDescription.translate(context),
+            iconOption:const Text(''),
+            fieldName: widget.description,
             hintText: TKeys.write.translate(context),
             myController: location,
             valid: (value) {

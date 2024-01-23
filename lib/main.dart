@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:hased/company/login_company/signin_company.dart';
+import 'package:hased/company/pages/conguratulation.dart';
 import 'package:hased/const/color.dart';
+import 'package:hased/notification/another_page.dart';
 import 'package:hased/pages/select.dart';
+import 'package:hased/screen/home_component/screen/notification_screen.dart';
 import 'package:hased/screen/home_component/screen/selling_crop_screen.dart';
 import 'package:hased/screen/play_store.dart';
 import 'package:hased/splash/splash_screen.dart';
@@ -22,7 +26,27 @@ import 'moduls/myProvider.dart';
 import 'moduls/themeProvider.dart';
 import 'package:get/get.dart';
 
-void main() {
+import 'notification/local_notification.dart';
+
+final navigatorKey = GlobalKey<NavigatorState>();
+FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
+    FlutterLocalNotificationsPlugin();
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await LocalNotifications.init();
+
+//  handle in terminated state
+  var initialNotification =
+      await flutterLocalNotificationsPlugin.getNotificationAppLaunchDetails();
+  if (initialNotification?.didNotificationLaunchApp == true) {
+    // LocalNotifications.onClickNotification.stream.listen((event) {
+    Future.delayed(const Duration(seconds: 1), () {
+      // print(event);
+      navigatorKey.currentState!.pushNamed('/another',
+          arguments: initialNotification?.notificationResponse?.payload);
+    });
+  }
   runApp(MultiProvider(
     providers: [
       ChangeNotifierProvider(
@@ -83,18 +107,21 @@ class MyApp extends StatelessWidget {
               themeMode: value.darkTheme ? ThemeMode.light : ThemeMode.dark,
               home: const SplashScreen(),
               routes: {
-                '/home': (ctx)=> const HomeFarmer(),
-                '/playStore': (ctx)=> const PlayStore(),
-                '/signIn': (ctx)=> const SignIn(),
-                '/login': (ctx)=> const Login(),
-                '/register': (ctx)=> const Register(),
-                '/registerCompany': (ctx)=> const RegisterCompany(),
-                '/navBar': (ctx)=> const CurvedNavBar(),
-                '/navBarComp': (ctx)=> const CurvedNavBarCompany(),
-                '/selected': (ctx)=> const SelectedItem(),
-                '/verified': (ctx)=> const VerifiedScreen(),
-                '/loginComp': (ctx)=> const LoginCompany(),
-                '/signInComp': (ctx)=> const SignInCompany(),
+                '/home': (ctx) => const HomeFarmer(),
+                '/playStore': (ctx) => const PlayStore(),
+                '/signIn': (ctx) => const SignIn(),
+                '/login': (ctx) => const Login(),
+                '/register': (ctx) => const Register(),
+                '/registerCompany': (ctx) => const RegisterCompany(),
+                '/navBar': (ctx) => const CurvedNavBar(),
+                '/navBarComp': (ctx) => const CurvedNavBarCompany(),
+                '/selected': (ctx) => const SelectedItem(),
+                '/verified': (ctx) => const VerifiedScreen(),
+                '/loginComp': (ctx) => const LoginCompany(),
+                '/signInComp': (ctx) => const SignInCompany(),
+                '/another': (ctx) => const AnotherPage(),
+                '/congratulation': (ctx) => const Congratulation(),
+                '/notification': (ctx) => const NotificationScreen(),
               },
             );
           },

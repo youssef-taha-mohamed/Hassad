@@ -1,7 +1,6 @@
-
 import 'localization_service.dart';
 
-enum TKeys{
+enum TKeys {
   welcome,
   registerNow,
   email,
@@ -67,13 +66,32 @@ enum TKeys{
   afterSend,
   congratulation,
   request,
-  visitStore
+  visitStore,
+  selectType2,
+  acre,
+  array,
+  addInformation,
+  tons,
+  afterSend2,
+  to,
+  informs,
+  view,
+  requestResults,
+  agricultural,
+  land,
+  acre2,
+  based,
+  total,
+  tons2,
+  fromSunflower,
+  advises,
+  january
 }
 
-extension TKeysExtention on TKeys{
+extension TKeysExtention on TKeys {
   String get _string => this.toString().split('.')[1];
 
-  String translate(context){
+  String translate(context) {
     return LocalizationService.of(context).translate(_string) ?? '';
   }
 }

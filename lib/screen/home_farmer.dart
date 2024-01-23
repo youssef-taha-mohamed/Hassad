@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hased/moduls/i_key.dart';
+import 'package:hased/screen/home_component/screen/seling_crop_screen2.dart';
 import 'package:hased/screen/home_component/widget/bar.dart';
 import 'package:hased/screen/home_component/widget/custom_card.dart';
 import 'package:hased/screen/home_component/screen/selling_crop_screen.dart';
@@ -23,7 +24,7 @@ class _HomeFarmerState extends State<HomeFarmer> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              margin: EdgeInsets.only(top: 60,left: 5,right: 15),
+              margin:const EdgeInsets.only(top: 60,left: 5,right: 15),
               child: const AppBarHome(
                 iconData: Icons.list_outlined,
               ),
@@ -54,11 +55,11 @@ class _HomeFarmerState extends State<HomeFarmer> {
               titleTwo: TKeys.selectType.translate(context),
               buttonText: TKeys.clickHere.translate(context),
               function: (){
-
+                Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>const SellingCrop2()));
               },
               widget:const Icon(Icons.photo_library_outlined,color: Colors.white,size: 70,)
             ),
-            SizedBox(height: 80,),
+            const SizedBox(height: 80,),
           ],
         ),
       ),

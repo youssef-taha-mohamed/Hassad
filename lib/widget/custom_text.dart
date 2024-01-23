@@ -9,6 +9,7 @@ class CustomText extends StatelessWidget {
   final double? wordSpace;
   final double? letterSpace;
   Color? color = Colors.black;
+  FontWeight? weight = FontWeight.w500;
 
   CustomText({
     super.key,
@@ -19,6 +20,7 @@ class CustomText extends StatelessWidget {
     this.letterSpace,
     this.color,
     this.margin,
+    this.weight
   });
 
   @override
@@ -30,7 +32,7 @@ class CustomText extends StatelessWidget {
         textAlign: textAlign,
         softWrap: true,
         style: GoogleFonts.tajawal(
-          fontWeight: FontWeight.w500,
+          fontWeight: weight,
           fontSize: fontSize,
           wordSpacing: wordSpace,
           letterSpacing: letterSpace,

@@ -5,8 +5,12 @@ class CustomTextWithColumn extends StatelessWidget {
   final String textOne;
   final String textTwo;
   final double fontSize;
+  final double? fontSizeOne;
+  final double? space;
   final CrossAxisAlignment axis;
   final TextAlign align;
+  final FontWeight? fontWeightOne;
+  final FontWeight? fontWeightTwo;
 
   const CustomTextWithColumn({
     super.key,
@@ -14,7 +18,7 @@ class CustomTextWithColumn extends StatelessWidget {
     required this.textTwo,
     required this.fontSize,
     required this.axis,
-    required this.align,
+    required this.align, this.space, this.fontSizeOne, this.fontWeightOne, this.fontWeightTwo,
   });
 
   @override
@@ -26,11 +30,11 @@ class CustomTextWithColumn extends StatelessWidget {
         children: [
           Text(
             textOne,
-            //textAlign: TextAlign.center,
+            textAlign: TextAlign.center,
             style: GoogleFonts.tajawal(
               color: Theme.of(context).colorScheme.scrim,
-              fontWeight: FontWeight.bold,
-              fontSize: 24,
+              fontWeight: fontWeightOne,
+              fontSize: fontSizeOne,
             ),
           ),
           const SizedBox(
@@ -42,6 +46,8 @@ class CustomTextWithColumn extends StatelessWidget {
             style: GoogleFonts.tajawal(
               color: Theme.of(context).colorScheme.scrim,
               fontSize: fontSize,
+              fontWeight: fontWeightTwo,
+              wordSpacing: space
             ),
           ),
         ],

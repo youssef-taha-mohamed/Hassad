@@ -37,14 +37,15 @@ class CustomTextForm extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(bottom: 8.0),
             child: Row(
-               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
                   fieldName,
                   style: GoogleFonts.tajawal(
-                      fontSize: 22,
-                      color: Colors.black87,
-                      fontWeight: FontWeight.bold),
+                    fontSize: 21,
+                    color: Colors.black87,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
                 iconOption!,
               ],

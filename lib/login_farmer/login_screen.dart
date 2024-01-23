@@ -99,6 +99,9 @@ class _LoginState extends State<Login> {
             icon: null,
             fontSize: 23,
             fontWeight: FontWeight.w900,
+            mainAxisAlignment: MainAxisAlignment.center,
+            backGround: mainColor,
+            textColor: Colors.white,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,

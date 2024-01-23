@@ -4,8 +4,29 @@ import 'package:hased/moduls/i_key.dart';
 import 'package:hased/widget/custom_button.dart';
 import 'package:hased/widget/custom_text_with_column.dart';
 
-class Congratulation extends StatelessWidget {
+import '../../notification/local_notification.dart';
+
+class Congratulation extends StatefulWidget {
   const Congratulation({super.key});
+
+  @override
+  State<Congratulation> createState() => _CongratulationState();
+}
+
+class _CongratulationState extends State<Congratulation> {
+
+  @override
+  void initState() {
+    listenToNotifications();
+    super.initState();
+  }
+  listenToNotifications() {
+    print("Listening to notification");
+    LocalNotifications.onClickNotification.stream.listen((event) {
+      print(event);
+      Navigator.pushNamed(context, '/notification', arguments: event);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +36,9 @@ class Congratulation extends StatelessWidget {
       ),
       body: Column(
         children: [
-          SizedBox(height: 20,),
+          SizedBox(
+            height: 20,
+          ),
           Card(
             margin: const EdgeInsets.all(20),
             color: backgroundColor,
@@ -39,22 +62,32 @@ class Congratulation extends StatelessWidget {
                     align: TextAlign.center,
                   ),
                   Spacer(),
-                  const Icon(
-                    Icons.check_circle,
-                    weight: 20,
-                    size: 170,
-                    color: Colors.green,
+                  InkWell(
+                    onTap: () {
+                      LocalNotifications.showSimpleNotification(
+                          title: "Simple Notification",
+                          body: "This is a Simple Notification",
+                          payload: "This is Simple data");
+                    },
+                    child: const Icon(
+                      Icons.check_circle,
+                      weight: 20,
+                      size: 170,
+                      color: Colors.green,
+                    ),
                   ),
                   Spacer(),
                 ],
               ),
             ),
           ),
-          SizedBox(height: 60,),
+          SizedBox(
+            height: 60,
+          ),
           CustomButton(
             function: () {
-              Navigator.of(context)
-                  .pushNamedAndRemoveUntil('/playStore', (Route<dynamic> route) => false);
+              Navigator.of(context).pushNamedAndRemoveUntil(
+                  '/playStore', (Route<dynamic> route) => false);
             },
             title: TKeys.visitStore.translate(context),
             width: MediaQuery.of(context).size.width,
@@ -63,7 +96,12 @@ class Congratulation extends StatelessWidget {
             icon: null,
             fontSize: 22,
             fontWeight: FontWeight.w700,
+            mainAxisAlignment: MainAxisAlignment.center,
+            backGround: mainColor,
+            textColor: Colors.white,
           ),
+          SizedBox(height: 10,),
+
         ],
       ),
     );

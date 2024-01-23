@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:hased/company/pages/conguratulation.dart';
 import 'package:hased/moduls/i_key.dart';
 import 'package:hased/screen/home_component/widget/bar.dart';
@@ -7,6 +6,8 @@ import 'package:hased/screen/home_component/widget/custom_image.dart';
 import 'package:hased/screen/home_component/widget/data.dart';
 import 'package:hased/widget/custom_button.dart';
 import 'package:hased/widget/custom_text.dart';
+
+import '../../../const/color.dart';
 
 class SellingCrop extends StatefulWidget {
   const SellingCrop({super.key});
@@ -49,6 +50,10 @@ class _SellingCropState extends State<SellingCrop> {
                 icon: Icons.camera_alt_outlined,
                 fontSize: 19,
                 fontWeight: FontWeight.w400,
+                mainAxisAlignment: MainAxisAlignment.center,
+                backGround: mainColor,
+                textColor: Colors.white,
+                iconColor: Colors.white,
               ),
               CustomButton(
                 function: () {},
@@ -59,17 +64,29 @@ class _SellingCropState extends State<SellingCrop> {
                 icon: Icons.photo_camera_back_outlined,
                 fontSize: 19,
                 fontWeight: FontWeight.w400,
+                mainAxisAlignment: MainAxisAlignment.center,
+                backGround: mainColor,
+                textColor: Colors.white,
+                iconColor: Colors.white,
               ),
             ],
           ),
           const SizedBox(
             height: 15,
           ),
-          const CustomImage(),
+          const CustomImage(
+            imageOne: 'assets/images/worshipers1.jpg',
+            imageTwo: 'assets/images/worshipers2.jpg',
+            imageThree: 'assets/images/worshipers3.jpg',
+          ),
           SizedBox(
             height: 15,
           ),
-          const Data(),
+          Data(
+            title: TKeys.quantity.translate(context),
+            hintTitle: TKeys.tons.translate(context),
+            description: TKeys.addDescription.translate(context),
+          ),
           CustomButton(
             function: () {
               Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=> const Congratulation()));
@@ -81,6 +98,9 @@ class _SellingCropState extends State<SellingCrop> {
             icon: null,
             fontSize: 22,
             fontWeight: FontWeight.w900,
+            mainAxisAlignment: MainAxisAlignment.center,
+            backGround: mainColor,
+            textColor: Colors.white,
           ),
           CustomText(
             title: TKeys.afterSend.translate(context),

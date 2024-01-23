@@ -64,6 +64,24 @@
   "congratulation":"Congratulation!",
   "request":"Your request has been sent successfully and the Hassad support team will contact you within hours and you will be informed of the details of the entire transaction",
   "afterSend":"After sending the request, the request will be reviewed by the support team and you will be responded to within 12 hours with the best buyer ready to buy your crop.",
-  "visitStore":"Visit the agricultural store!"
-
+  "visitStore":"Visit the agricultural store!",
+  "array":"Area of agricultural spot",
+  "acre":"10 Acre",
+  "selectType2":"You are required to fill out the following information in order to provide you with information that will help you grow your crop",
+  "addInformation":"Add any information you would like to inform us",
+  "tons":"10 Tons",
+  "afterSend2": "After sending the request, the request will be reviewed by the support team and you will be responded to within 12 hours with the best instructions that suit the area of your agricultural plot and the most important agricultural supplies and tools that you will need.",
+  "to": "Your request has been reviewed!",
+  "informs": "Hassad informs you of the best expected result from planting a sunflower crop and the appropriate time period for planting it",
+  "view": "View order data",
+  "requestResults": "Request results",
+  "agricultural": "The agricultural area to be cultivated",
+  "land": "From your land in the Minya area",
+  "acre2":"10 Acre",
+  "based":"Based on the information that was added,",
+  "total":"Harvest predicts the total harvest",
+  "tons2":"10\n Tons",
+  "fromSunflower":"From the sunflower crop",
+  "advises":"Hassad advises you to start farming in",
+  "january":"1 January 2024"
 }

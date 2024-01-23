@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../const/color.dart';
 import '../moduls/i_key.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../widget/custom_button.dart';
@@ -62,6 +63,9 @@ class _SelectedItemState extends State<SelectedItem> {
               icon: null,
               fontSize: 23,
               fontWeight: FontWeight.w900,
+              mainAxisAlignment: MainAxisAlignment.center,
+              backGround: mainColor,
+              textColor: Colors.white,
             ),
           ),
           const SizedBox(height: 30,),
@@ -79,6 +83,9 @@ class _SelectedItemState extends State<SelectedItem> {
               icon: null,
               fontSize: 23,
               fontWeight: FontWeight.w900,
+              mainAxisAlignment: MainAxisAlignment.center,
+              backGround: mainColor,
+              textColor: Colors.white,
             ),
           ),
           SizedBox(height: 70,),

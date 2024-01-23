@@ -133,6 +133,9 @@ class _LoginCompanyState extends State<LoginCompany> {
               padding: 18.0,
               icon: null,
               fontSize: 23,
+              mainAxisAlignment: MainAxisAlignment.center,
+              backGround: mainColor,
+              textColor: Colors.white,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
